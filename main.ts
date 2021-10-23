@@ -46,7 +46,8 @@ async function handleRequest(request: Request) {
     const wav = await fetchAudio(text)
     return new Response(wav, {
       headers: {
-        'Content-Type': 'audio/wav'
+        'Content-Type': 'audio/wav',
+        'Access-Control-Allow-Origin': '*'
       }
     })
   } catch(e) {
